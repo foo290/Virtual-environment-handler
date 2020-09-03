@@ -1,3 +1,5 @@
 # Virtual-environment-handler
-UNDERDEVELOPMENT
-create/add/delete/install packages in virtual environment with GUI
+### A light weight virtual environment handler with GUI
+
+### GUI
+
