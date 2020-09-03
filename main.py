@@ -216,6 +216,7 @@ class Prefrences_Frontend(Mainframe2):
                              textvariable=path_variable2)
                 path.place(x=130, y=100)
                 path_variable2.set(base_Directory)
+
                 but2 = Mainframe2().custombuttons(root_can, 'Browse', 15, 1, get_path, width - 150, 97)
                 but2.config(relief='solid', borderwidth=0, fg='white', bg=properties.primaryClr)
 
@@ -641,7 +642,7 @@ class Prefrences_Frontend(Mainframe2):
                     y = (pkgroot.winfo_screenheight() // 2) - (height // 2)
                     pkgroot.resizable(0, 0)
                     pkgroot.focus()
-                    pkgroot.title('Install Pakages -pip install')
+                    pkgroot.title('Install Packages -pip install')
                     pkgroot.geometry(f'{width}x{height}+{x}+{y}')
 
                     img_ = PhotoImage(file='Configuration/pip.png')
@@ -706,12 +707,12 @@ class Front_end(Mainframe2):
 
         self.root.geometry(f'{width}x{height}+{x}+{y}')
         self.root_can = super().customcan(self.root, width, height, 'black', 0, 0)
-        self.root_can.create_text(width//2, height//2-100, text='Environment Launcher', font='Ebrima 18', fill='white')
-        self.root_can.create_text(width // 2, height // 2, text='Underdevelopment', font='Ebrima 18',
-                                  fill='white')
+        # self.root_can.create_text(width//2, height//2-100, text='Environment Launcher', font='Ebrima 18', fill='white')
+        # self.root_can.create_text(width // 2, height // 2, text='Underdevelopment', font='Ebrima 18',
+        #                           fill='white')
 
-        # img = PhotoImage(file=f'{installed}\\{properties.main_frontend_image}')
-        # self.root_can.create_image(0, 0, image=img, anchor=NW)
+        img = PhotoImage(file=f'{installed}\\{properties.main_frontend_image}')
+        self.root_can.create_image(0, 0, image=img, anchor=NW)
 
         self.root.iconbitmap(self.root, properties.icon_image)
 

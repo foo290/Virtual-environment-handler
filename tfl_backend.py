@@ -103,7 +103,7 @@ class Core_ops:
 
         try:
             if activeVE != 'NotSpecified':
-                if (activeVE != ''):
+                if activeVE != '':
 
                     if Current_default_env_dir == base_Directory:
                         p2 = subprocess.Popen(['start', 'cmd', '/k',
@@ -340,12 +340,12 @@ class Install_Pakages:
         pass
 
     def install_pkgs_via_pip(self, name, dir, pkgname):
-        target_dir = f'{dir}/{name}/Lib/site-packages'
-        activate_cmd = f'{dir}/{name}/Scripts'
+        activate_cmd = f'{dir}/Scripts'
         install_cmd = f'pip install {pkgname}'
+        print(activate_cmd)
 
         p2 = subprocess.Popen(
-            ['start', 'cmd', '/k', f'cd {activate_cmd} && activate.bat && cd {target_dir} && {install_cmd}'],
+            ['start', 'cmd', '/k', f'cd {activate_cmd} && activate.bat && {install_cmd}'],
             shell=True, stdin=subprocess.PIPE, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
         p2.wait(1)
 
